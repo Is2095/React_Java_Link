@@ -3,7 +3,7 @@ import { ChangeEvent, useCallback, useState } from "react";
 import { AREAS_CAMPOS_BUSQUEDA } from "../constantes";
 import Select_Area from '../servicios/select_area';
 import { Elemento } from "../types.d";
-import { Registros } from "./Registros";
+// import { Registros } from "./Registros";
 import { useBuscarRegistros } from "../hooks/useBuscarRegistros";
 import { useModal } from "../hooks/useModal";
 import { Modal_Respuesta } from "../servicios/modal_respuesta";
@@ -50,9 +50,9 @@ export const BusquedaElemento = () => {
         }
 
       </header>
-      <main>
+      {/* <main>
         <Registros />
-      </main>
+      </main> */}
       {
         resultadoBusqueda.error
           ? <Modal_Respuesta resetModal={resetModal} modal={modal} text={message} />

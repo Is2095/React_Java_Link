@@ -38,10 +38,13 @@ export const Registros = () => {
 
   const handleActualizar = (registro: DatosRegistro) => {
     if (registro?.id) {
-      if (editarId === registro.id) setEditar(!editar);
       setEditarId(registro.id as string);
       setDatosAEditar(registro);
       datosOriginales.current = { ...registro };
+
+      if (editarId === registro.id) {
+        setEditar(!editar);
+      }
     }
   };
 
@@ -70,7 +73,7 @@ export const Registros = () => {
   };
 
   return (
-    <main>
+    <main className="mainTable">
       {
         registro.length > 0 ?
           <table className="tableRegistro" >
@@ -129,7 +132,7 @@ export const Registros = () => {
                         }
                       </td>
 
-                      <td>
+                      <td >
                         {
                           editarId === registro.id && editar
                             ? <ComponenteEntrada label={""} onChange={handleChangeInputs} name={"link"} id={"link"} type={"text"} value={datosAEditar.link} placeholderText={'https://....'} />
@@ -155,11 +158,11 @@ export const Registros = () => {
 
                       <td>{registro.date?.split('T')[0]}</td>
 
-                      <td onClick={() => handleRemover(registro.id)}>
+                      <td className="botonActualizarBorrar" onClick={() => handleRemover(registro.id)}>
                         <Remover />
                       </td>
                       <td >
-                        <div onClick={() => handleActualizar(registro)} >
+                        <div className="botonActualizarBorrar" onClick={() => handleActualizar(registro)} >
                           <Actualizar />
                         </div>
                         {

@@ -24,7 +24,7 @@ export default function IngresoElemento() {
   const { resetModal, modal, message } = useModal({ resultado });
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault();    
     GuardarRegistro(registro);
     setRegistro(initialStateRegistro);
   };

@@ -59,6 +59,7 @@ public class LinkImportantesSevice {
     }
 
     public ApiResponse<RegistroModelo> crearRegistro(RegistroModelo datosRegistro) {
+            datosRegistro.setId(null);
         try {
             Query query = new Query(Criteria.where("area").is(datosRegistro.getArea())
                     .and("titulo").is(datosRegistro.getTitulo())

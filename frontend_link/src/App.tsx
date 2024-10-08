@@ -1,6 +1,7 @@
 import IngresoElemento from './components/ingresoElemento';
 import './App.css';
 import { BusquedaElemento } from './components/BusquedaElemento';
+import { Registros } from './components/Registros';
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <div>
       <IngresoElemento />
       <BusquedaElemento />
+      <Registros />
     </div>
 
   );
